@@ -25,8 +25,8 @@ If both controls for a channel type are off, the plugin does not track messages 
 This is a custom plugin for a Vencord build from source.
 
 1. Pull this repository into `src/userplugins/`.
-2. Quit Discord, rebuild Vencord and inject the new build into your desktop client.
-3. Enable **AutoDeleteMessages** in Vencord's plugin settings and configure the three delays and close switches.
+2. Quit Discord, rebuild Vencord and inject the new build into your client.
+3. Enable **AutoDeleteMessages** in Vencord's plugin settings and configure the desired options.
 
 ## Notes
 
