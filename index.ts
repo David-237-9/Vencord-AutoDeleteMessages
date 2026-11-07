@@ -4,8 +4,11 @@ import definePlugin, { PluginNative } from "@utils/types";
 import { ChannelStore, Constants, RestAPI, UserStore } from "@webpack/common";
 
 import Settings, { MAX_SECONDS } from "./settings";
+import { checkForUpdates } from "./updateChecker";
 
 const Native = VencordNative.pluginHelpers.AutoDeleteMessages as PluginNative<typeof import("./native")> | undefined;
+
+const spacedPluginName = "Auto Delete Messages";
 
 type Location = "dm" | "groupDm" | "guild";
 type Reason = "timer" | "close";
@@ -656,6 +659,10 @@ export default definePlugin({
         running = true;
         closing = false;
         generation++;
+
+        if (Settings.store.checkForUpdates) {
+            checkForUpdates(spacedPluginName);
+        }
 
         window.addEventListener("beforeunload", onClientUnload);
         window.addEventListener("pagehide", onClientUnload);

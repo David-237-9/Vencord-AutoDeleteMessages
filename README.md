@@ -9,10 +9,12 @@ The plugin tracks **new messages you send while it is enabled**. It does not sca
 
 | Channel type | Delay setting | Delete on close setting |
 | --- | --- | --- |
-| One-to-one DMs | `Dm Seconds` | `Dm On Close` |
-| Group DMs | `Group Dm Seconds` | `Group Dm On Close` |
-| Servers and threads | `Guild Seconds` | `Guild On Close` |
+| `checkForUpdates` | Check for updates to the plugin on startup. | Enabled |
+| `One-to-one DMs` | Dm Seconds | Dm On Close |
+| `Group DMs` | Group Dm Seconds | Group Dm On Close |
+| `Servers and threads` | Guild Seconds | Guild On Close |
 
+- It is recommended to keep the `checkForUpdates` option enabled.
 - Enter a delay in seconds to delete messages after they are sent.
 - Set a delay to `0` to turn off timed deletion for that channel type.
 - Turn on **Delete on close** to delete its tracked messages when the client closes, even if its delay is `0`.

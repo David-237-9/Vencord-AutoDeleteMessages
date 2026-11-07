@@ -8,6 +8,11 @@ const validDelay = (value: number) =>
     || `Enter a number between 0 and ${MAX_SECONDS} seconds.`;
 
 export default definePluginSettings({
+    checkForUpdates: {
+        type: OptionType.BOOLEAN,
+        description: "Check for updates to the plugin on startup.",
+        default: true,
+    },
     dmSeconds: {
         type: OptionType.NUMBER,
         description: "Seconds before deleting your new one-to-one DM messages. 0 disables timed deletion. Pending deadlines survive a restart.",
